@@ -1,0 +1,9 @@
+.header {
+    background-color: rgba(11, 189, 56, 0.918);
+    color: #000;
+};
+
+img {
+    max-height: 286px;
+    width: 286px;
+}
