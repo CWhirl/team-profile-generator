@@ -5,6 +5,10 @@ const INTERN = require('./lib/intern');
 const path = require('path');
 const fs = require('fs');
 const inquirer = require('inquirer');
+const genHTML = require('./src/template.js');
+const output = path.resolve(__dirname, "dist");
+const outputPath = path.join(output, "index.html");
+
 let team = [];
 
 const namePrompt = 
@@ -93,7 +97,7 @@ function getEmployeeType(){
         } else if (response.type === "Intern"){
             buildEmployee("intern");
         } else {
-            return "exit";
+            outputHTML();
         }
     })
 }
@@ -148,6 +152,10 @@ function buildEmployee(role) {
         getEmployeeType();
     });
 };
+
+const outputHTML = () => {
+    fs.writeFileSync(outputPath, genHTML(team));
+}
 
 function init () {
     buildEmployee("manager");
