@@ -66,12 +66,6 @@ const schoolPrompt =
     name:"employeeSchool",
     type: "input",
     message:"What is their school's name?",
-    validate: userIn => {
-        if (isNaN(userIn)){
-            return true;
-        }
-        return "please enter the employee's school name";
-    }
 };
 const typePrompt =
 {
@@ -124,8 +118,8 @@ function buildEmployee(role) {
             case "engi":
                 const engi = new ENGI(
                     answers.employeeName,
-                    answers.employeeEmail,
                     answers.employeeID,
+                    answers.employeeEmail,
                     answers.employeeGit
                 );
                 team.push(engi);
@@ -133,8 +127,8 @@ function buildEmployee(role) {
             case "intern":
                 const intern = new INTERN(
                     answers.employeeName,
-                    answers.employeeEmail,
                     answers.employeeID,
+                    answers.employeeEmail,
                     answers.employeeSchool
                 );
                 team.push(intern);
@@ -142,8 +136,8 @@ function buildEmployee(role) {
             case "manager":
                 const manager = new MANAGER(
                     answers.employeeName,
-                    answers.employeeEmail,
                     answers.employeeID,
+                    answers.employeeEmail,
                     answers.employeeOffice
                 );
                 team.push(manager);

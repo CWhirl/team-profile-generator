@@ -8,7 +8,7 @@ function outputTeam (team) {
             Position: ${manager.getRole()}</h5>
           <p class="card-text">
               ID: ${manager.id} <br>
-              Email: ${manager.email} <br>
+              Email: <a href="mailto:${manager.email}">${manager.email}</a> <br>
               Office Number: ${manager.officeNumber}
           </p>
         </div>
@@ -24,7 +24,7 @@ function outputTeam (team) {
             Position: ${engineer.getRole()}</h5>
           <p class="card-text">
               ID: ${engineer.id} <br>
-              Email: ${engineer.email} <br>
+              Email: <a href="mailto:${engineer.email}">${engineer.email}</a> <br>
               GitHub: <a href = "https://github.com/${engineer.github}">${engineer.github}</a>
           </p>
         </div>
@@ -40,8 +40,8 @@ function outputTeam (team) {
             Position: ${intern.getRole()}</h5>
           <p class="card-text">
               ID: ${intern.id} <br>
-              Email: ${intern.email} <br>
-              School: ${intern.github}
+              Email: <a href="mailto:${intern.email}">${intern.email}</a> <br>
+              School: ${intern.school}
           </p>
         </div>
         </div>`
